@@ -7,11 +7,19 @@ const headers = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
 };
 
-const getUrl = (path: string) => `https://apis.slstice.com/mock/${path}?api_key=${API_KEY}&limit=5`;
+/**
+ *
+ * @param path Request path
+ * @param limit Resources limit
+ * @returns Request URL
+ */
+const getUrl = (path: string, limit = 0) => limit
+  ? `https://apis.slstice.com/mock/${path}?api_key=${API_KEY}&limit=${limit}`
+  : `https://apis.slstice.com/mock/${path}?api_key=${API_KEY}`;
 
 export const getPosts = async (): Promise<Post[] | null> => {
   try {
-    const response = await fetch(getUrl('posts'), {
+    const response = await fetch(getUrl('posts', 5), {
       headers,
     });
 

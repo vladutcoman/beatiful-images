@@ -13,6 +13,9 @@ export type MediaPostData = {
   id: string;
 };
 
+/**
+ * Custom hook to fetch media post data from 3 different endpoints: posts, users and media and return the data
+ */
 export const useMediaPostData = () => {
   const [data, setData] = useState<MediaPostData[]>([]);
   const [error, setError] = useState("");
