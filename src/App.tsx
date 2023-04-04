@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { PostReel } from "./components/PostsFeed";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="text-center min-h-screen">
+      <h1 className="mb-4 text-4xl px-2 text-white bg-blue-600 rounded dark:bg-blue-500">
+        Beautiful Images
+      </h1>
+      <section className="mt-12 flex align-middle justify-center">
+        <PostReel />
+      </section>
+    </main>
   );
 }
 

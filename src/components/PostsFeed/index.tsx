@@ -1,0 +1,1 @@
+export { PostReel } from "./PostsFeed";
